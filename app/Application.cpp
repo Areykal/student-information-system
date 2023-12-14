@@ -42,7 +42,7 @@ enum{
     UPDATE_STUDENT,
     DELETE_STUDENT,
     LOAD_STUDENT,
-    SAVE_STUDENT    
+    SAVE_STUDENT
 };
 enum{
     //MANAGE_USER_MENU = 0,
@@ -70,9 +70,9 @@ private:
 
     void welcomePage(){
         cout<<"\n1. Login To The System"<<endl;
-        cout<<"0. Exit"<<endl;   
+        cout<<"0. Exit"<<endl;
         cout<<"Enter Choice: ";
-        cin>>choiceWelcome;   
+        cin>>choiceWelcome;
         cout<<endl;
     }
     void mainMenu(){
@@ -89,7 +89,7 @@ private:
         cout<<"3. Update Existing User"<<endl;
         cout<<"4. Delete User"<<endl;
         cout<<"5. Load User"<<endl;
-        cout<<"6. Save User"<<endl;        
+        cout<<"6. Save User"<<endl;
         cout<<"0. Back to Main Menu"<<endl;
         cout<<"Enter Choice: ";
         cin>>choiceAdmin;
@@ -101,10 +101,10 @@ private:
         cout<<"3. Update Existing Student"<<endl;
         cout<<"4. Delete Student"<<endl;
         cout<<"5. Load Student"<<endl;
-        cout<<"6. Save Student"<<endl;          
+        cout<<"6. Save Student"<<endl;
         cout<<"0. Back to Main Menu"<<endl;
         cout<<"Enter Choice: ";
-        cin>>choiceRegistrar;        
+        cin>>choiceRegistrar;
         cout<<endl;
     }
     void modifyUserMenu(){
@@ -126,7 +126,7 @@ private:
         cin>>username;
         return username;
     }
-    
+
 
 public:
     void run(){
@@ -160,9 +160,9 @@ public:
                                                     for(int i=1; i<=j; i++){
                                                         cout<<"Input User ("<<i<<"): "<<endl;
                                                         user[i].inputUser();
-                                                        userService.addUser(&user[i]);  
-                                                        cout<<endl;                                          
-                                                    }                            
+                                                        userService.addUser(&user[i]);
+                                                        cout<<endl;
+                                                    }
                                                 }catch(UserDuplicatedException& u){
                                                     cout<<u.what()<<endl;
                                                 }
@@ -188,7 +188,7 @@ public:
                                                         userService.modifyUserRole(username);
                                                         break;
                                                     default:
-                                                    break;                                                            
+                                                    break;
                                                 }//while(choiceModifyUser!=MANAGE_USER_MENU)
                                                 break;
                                             case DELETE_USER:
@@ -201,11 +201,11 @@ public:
                                                 break;
                                             case SAVE_USER:
                                                 userService.writeUserToFile();
-                                                cout<<"All User Save Succesfully"<<endl;  
-                                                break;                                              
+                                                cout<<"All User Save Succesfully"<<endl;
+                                                break;
                                             default:
                                             cout<<">>> Invalid Input <<<"<<endl<<endl;
-                                        }                                        
+                                        }
                                     }while(choiceAdmin!=MAIN_MENU);
                                     break;
                                 case MANAGE_STUDENT:
@@ -216,7 +216,7 @@ public:
                                                 try{
                                                     cout<<"Display"<<endl<<endl;
                                                     studentService.displayStudent();
-                                                    cout<<endl;            
+                                                    cout<<endl;
                                                 }catch(StudentNotFoundException& s){
                                                     cout<<s.what()<<endl;
                                                 }
@@ -230,20 +230,20 @@ public:
                                                     for(int i=1; i<=j; i++){
                                                         cout<<"Input Student ("<<i<<"): "<<endl;
                                                         student[i].inputStudent();
-                                                        studentService.addStudent(&student[i]);  
-                                                        cout<<endl;                                          
-                                                    }                   
+                                                        studentService.addStudent(&student[i]);
+                                                        cout<<endl;
+                                                    }
                                                 }catch(StudentDuplicatedException& s){
                                                     cout<<s.what()<<endl;
-                                                }                                                
+                                                }
                                                 break;
                                             case UPDATE_STUDENT:
                                                 username = updateInput(username);
-                                                studentService.modifyStudent(username);                                            
+                                                studentService.modifyStudent(username);
                                                 break;
                                             case DELETE_STUDENT:
                                                 username = deleteInput(username);
-                                                studentService.deleteStudent(username);                                               
+                                                studentService.deleteStudent(username);
                                                 break;
                                             default:
                                             cout<<">>> Invalid Input <<<"<<endl<<endl;
@@ -252,15 +252,15 @@ public:
                                     break;
                                 case WELCOME_PAGE:
                                     break;
-                                default: 
+                                default:
                                     cout<<">>> Invalid Input <<<"<<endl<<endl;
-                                    break;                                    
+                                    break;
                             }
                     }while(choiceMain!=WELCOME_PAGE);
                     break;
                 case EXIT:
                     break;
-                default: 
+                default:
                     cout<<">>> Invalid Input <<<"<<endl;
                     break;
             }
@@ -276,13 +276,13 @@ public:
         // user.inputUser();
         // userService.addUser(&user);
         // user1.inputUser();
-        // userService.addUser(&user1);    
+        // userService.addUser(&user1);
         // cout<<"Input username to delete: ";
         // cin>>username;
-        // userService.deleteUser(username);    
-        // userService.displayUser();        
+        // userService.deleteUser(username);
+        // userService.displayUser();
 
-        
+
         // string username, password;
         // UserService userService;
 

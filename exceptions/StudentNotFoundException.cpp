@@ -4,9 +4,11 @@
 #include <exception>
 using namespace std;
 
-class StudentNotFoundException: public exception{
+class StudentNotFoundException : public exception
+{
 public:
-    virtual const char* what() const throw(){
+    virtual const char *what() const throw()
+    {
         return "Student was not found";
     }
 };

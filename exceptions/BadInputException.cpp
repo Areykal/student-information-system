@@ -4,10 +4,11 @@
 #include <exception>
 using namespace std;
 
-class BadInputException: public exception{
+class BadInputException : public exception
+{
 public:
-    virtual const char*what() const throw(){
+    virtual const char *what() const throw()
+    {
         return "Invalid Input";
     }
-
 };

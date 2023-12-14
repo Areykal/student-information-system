@@ -4,9 +4,11 @@
 #include <exception>
 using namespace std;
 
-class UserDuplicatedException: public exception{
+class UserDuplicatedException : public exception
+{
 public:
-    virtual const char* what() const throw(){
+    virtual const char *what() const throw()
+    {
         return "This user already has in the system!!!";
     }
 };
